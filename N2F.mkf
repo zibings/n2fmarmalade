@@ -1,0 +1,49 @@
+options
+{
+	strict
+}
+
+files
+{
+	(source/n2f)
+	n2f.h
+	core.h
+	Screen.h
+	Screen.cpp
+	s3eutils.h
+	s3eutils.cpp
+	Controller.h
+	Controller.cpp
+	Element.h
+	Element.cpp
+	WebAuth.h
+	WebAuth.cpp
+
+	[lib]
+	(source/n2f/lib)
+	cJSON.h
+	Easing.h
+
+	[lib/cJSON]
+	(source/n2f/lib/cJSON)
+	cJSON.h
+	cJSON.c
+
+	[lib/Easing]
+	(source/n2f/lib/Easing)
+	AnimationBase.h
+	AnimationBase.cpp
+	Trajectory.h
+	Trajectory.cpp
+	Tween.h
+	Tween.cpp
+	Easing.h
+	Easing.cpp
+	Helpers.h
+	Helpers.cpp
+
+	[render]
+	(source/n2f/render)
+	Iw2D.h
+	Iw2D.cpp
+}

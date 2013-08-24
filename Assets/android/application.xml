@@ -1,0 +1,4 @@
+<!--
+  Anything you include here should end up being inserted into the AndroidManifest.xml at the ${EXTRA_APPLICATION_MANIFESTS}.
+  If not, you an edit the AndroidManifest.xml directly.
+-->

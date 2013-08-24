@@ -1,0 +1,27 @@
+options
+{
+	strict
+}
+
+assets
+{
+	[default]
+	(data)
+	.
+}
+
+files
+{
+	(source)
+	globals.h
+	Application.h
+	Application.cpp
+	ApplicationController.h
+	ApplicationController.cpp
+
+	[Data]
+	(data)
+	#Fonts.group
+	#Generic.group
+	#Home.group
+}

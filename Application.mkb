@@ -1,0 +1,103 @@
+defines
+{
+	IW_GXFONT_TTF
+}
+
+packages
+{
+	s3eDialog
+}
+
+subprojects
+{
+	# Marmalade
+	iw2d
+	iwhttp
+	iwgxfont
+	iwresmanager
+	s3eWebView
+	s3eDialog
+
+	# Project
+	N2F
+	Application
+}
+
+files
+{
+	latest-changes.txt
+}
+
+assets
+{
+	["Base Config"]
+	<include "Default">
+	(data)
+	(data-ram/data-gles1, data)
+	# TO ADD Groups
+	#  1. Add all the assets and build the .group files
+	#  2. Build an x86 Release
+	#  3. Add the resulting .group.bin files here
+	#Fonts.group.bin
+	#Generic.group.bin
+	#Home.group.bin
+	# Add a new group for each screen of the application
+
+	["iPhone Only"]
+
+	["Android Only"]
+
+	["iPhone Config"]
+	<include "Base Config">
+	<include "iPhone Only">
+
+	["Android Config"]
+	<include "Base Config">
+	<include "Android Only">
+}
+
+deployments
+{
+	uid=0x12345678  #Change this to a real UID.. where does that come from?
+	# Note: the default app ID is generated as com.<provider>.<name>
+	provider=n2f
+	name=marmalade # used under the icon on Android
+	caption="marmalade" # used under the icon on IOS
+	version=0.0.1
+	assets="Base Config"
+
+
+	["iPhone"]
+	iphone
+	assets="iPhone Config"
+	iphone-disable-ipad=1 #1 if phone only, 0 if the build supports both
+	iphone-enable-4inch-retina=1 #need this for ios6+ approval on itunes connect
+	iphone-appid="com.n2f.marmalade" # change to com.<your_org>.<app_name>
+	#iphone-icon="Assets/icons/57x57.png"
+	#iphone-icon-high-res="Assets/icons/114x114.png"
+	#iphone-icon-ipad="Assets/icons/72x72.png"
+	#iphone-icon-ipad-high-res="Assets/icons/144x144.png"
+	#iphone-splash="Assets/icons/splashscreen.png"
+	#######################################################
+	# To release into the Apple IOS store, you must:
+	#  1. Change the setting below to point to the release profile
+	#  2. Sign the .apk with the Marmalade iPhone Re-Signer
+	#iphone-provisioning-profile="Signing/<project>Devs.mobileprovision"
+
+	["Android"]
+	android
+	assets="Android Config"
+	android-manifest="Assets/android/AndroidManifest.xml" 
+	#android-icon="Assets/icons/48x48.png"
+	#android-icon-gallery="Assets/icons/170x170.png"
+	#android-icon-hdpi="Assets/icons/72x72.png"
+	#android-icon-ldpi="Assets/icons/36x36.png"
+	#android-icon-mdpi="Assets/icons/48x48.png"
+	#android-icon-gallery="Assets/icons/170x170.png"
+	#######################################################
+	# To release into the Google Play store, you must:
+	#  1. Uncomment the setting below
+	#  2. Follow the steps at 
+	#   http://developer.android.com/tools/publishing/app-signing.html
+	#android-unsigned=1
+}
